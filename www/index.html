@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+    <ion-pane>
+      <ion-header-bar class="bar-stable">
+        <h1 class="title">String Parser</h1>
+      </ion-header-bar>
+      <ion-content>
+      <br>
+      <br>
+      <div class="card" ng-controller="stringController" style="text-align: center; max-width: 480px; margin:auto">
+          <div class="item item-divider">
+            <h2>Problem Solving Exercises</h2>
+            
+          </div>
+        <div class="item item-text-wrap" >
+          <h3>In the programming language of your choice, write a method that modifies a string using the following rules:</h3>
+          <br>
+          <ol style="list-style: decimal; padding:20px; text-align: left;">
+            <li>Each word in the input string is replaced with the following: the first letter of the word, the count of distinct letters between the first and last letter, and the last letter of the word. For example, "Automotive" would be replaced by "A6e".</li>
+            <li>A "word" is defined as a sequence of alphabetic characters, delimited by any non-alphabetic characters.</li>
+            <li> Any non-alphabetic character in the input string should appear in the output string in its original relative location.</li>
+          </ol>
+          <form action="">
+            <label for="string">Input for string to be parsed:</label>
+            <br>
+          <textarea  name="string" cols="30" rows="10" ng-model="string" style="border: 1px solid gray;
+                                                                  padding: 5px;
+                                                                  font-size: 1.3em;
+                                                                  margin: auto;"></textarea>
+          </form>
+          <br>
+          <br>
+          <h2 style="font-size:1.3em">Output string: <span ng-repeat="stringle in separate(string) track by $index">{{change(stringle)}}</span></h2>
+          <br>
+          <p>Note: the instructions say "the count of distinct letters between the first and last letter", and then give the example "Automotive", and as an output "A6e", even though there are ten characters in Automotive, and 8 distict letters between the first and last letter. The correct output should be "A8e", which is how the form above will parse the inputted string. </p>
+        </div>
+      </div>
+      </ion-content>
+    </ion-pane>
+  </body>
+</html>
